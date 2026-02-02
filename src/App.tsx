@@ -7,6 +7,7 @@ import { Bubbles } from './components/Bubbles';
 import { Captcha } from './components/Captcha';
 import { FloatingText } from './components/FloatingText';
 import { motion, AnimatePresence } from 'framer-motion';
+import lobsterImg from './assets/titan_lobster.png';
 
 // Meme phrases for random display
 const MEME_PHRASES = [
@@ -121,8 +122,8 @@ function App() {
       <header className="fixed top-0 w-full bg-black/10 backdrop-blur-md border-b border-white/5 z-40 transition-all duration-300">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-claw-red to-claw-dark-red rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(208,0,0,0.5)]">
-               <span className="text-2xl">🦞</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-claw-red to-claw-dark-red rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(208,0,0,0.5)] overflow-hidden">
+               <img src={lobsterImg} alt="logo" className="w-8 h-8 object-contain" />
             </div>
             <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 tracking-tighter" title="The one and only!">$ClawClick</span>
           </div>

@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo ========================================================
 echo   STARTING GITHUB UPLOAD
 echo ========================================================
@@ -8,43 +9,30 @@ echo.
 if not exist .git (
     echo [1/6] Initializing repository...
     git init
+    git branch -M main
 ) else (
     echo [1/6] Repository already initialized.
 )
 
-:: 2. Add
-echo [2/6] Adding files...
-git add .
-
-:: 3. Commit
-echo [3/6] Committing changes...
-git commit -m "Manual upload: ClawClick Premium"
-
-:: 4. Branch
-echo [4/6] Setting main branch...
-git branch -M main
-
-:: 5. Remote
-echo [5/6] Configuring remote...
-git remote remove origin 2>nul
+:: 2. Remote
+echo [2/6] Configuring remote...
+git remote remove origin
 git remote add origin https://github.com/903590485568t-beep/clawclick.git
 
-:: 6. Push
-echo [6/6] PUSHING TO GITHUB...
-echo.
-echo NOTE: A browser window or password prompt may appear.
-echo Please log in if requested.
-echo.
-git push -u origin main
+:: 3. Add
+echo [3/6] Adding files...
+git add .
+
+:: 4. Commit
+echo [4/6] Committing changes...
+git commit -m "Update: Premium visuals, spring animation, and custom branding"
+
+:: 5. Push
+echo [5/6] Pushing to GitHub...
+git push -u origin main --force
 
 echo.
 echo ========================================================
-if %errorlevel% equ 0 (
-    echo   SUCCESS! FILES UPLOADED.
-) else (
-    echo   ERROR! SOMETHING WENT WRONG.
-    echo   Check your internet or permissions.
-)
+echo   DONE! Check your repository.
 echo ========================================================
-echo.
 pause

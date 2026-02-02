@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import lobsterImg from '../assets/titan_lobster.png';
 
 export const Bubbles = () => {
   // Increased count for more density
@@ -27,7 +28,7 @@ export const Bubbles = () => {
             delay: Math.random() * 20,
           }}
         >
-          🦞
+          <img src={lobsterImg} alt="" className="w-8 h-8 opacity-60" />
         </motion.div>
       ))}
       

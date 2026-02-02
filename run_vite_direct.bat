@@ -1,0 +1,6 @@
+@echo off
+cd /d "%~dp0"
+echo Starting ClawClick Server...
+echo Bypassing PowerShell restrictions...
+node node_modules/vite/bin/vite.js --host
+pause
