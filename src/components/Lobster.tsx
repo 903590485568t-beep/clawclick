@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
+import { MouseEvent } from 'react';
 
-export const Lobster = ({ onClick, isAnimating }: { onClick: () => void; isAnimating: boolean }) => {
+export const Lobster = ({ onClick, isAnimating }: { onClick: (e: MouseEvent) => void; isAnimating: boolean }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05, rotate: 1 }}
